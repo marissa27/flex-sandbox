@@ -3,3 +3,21 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+/** Header **/
+
+header {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+
+h1 {
+  margin: 0 auto 0 0;
+}
+
+.show-code--btn {
+  display: block;
+  margin: 0 5px 0 0;
+}
