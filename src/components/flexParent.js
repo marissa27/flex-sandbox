@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { FlexChild } from './flexChild';
 
-export const FlexParent = ({ style }) => {
+export const FlexParent = ({ style, divs }) => {
 
   const renderChildrenDiv = () => {
-    return [1, 2, 3, 4].map((num, i) => {
+    return divs.map((num, i) => {
       return (
         <FlexChild key={i} divNumber={ num } />
       )
