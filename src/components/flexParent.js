@@ -5,9 +5,9 @@ export const FlexParent = ({ flexClass }) => {
   const className = `flex-parent ${flexClass}`;
 
   const renderChildrenDiv = () => {
-    return [1, 2, 3,4 ].map(num => {
+    return [1, 2, 3, 4].map((num, i) => {
       return (
-        <FlexChild divNumber={ num }/>
+        <FlexChild key={i} divNumber={ num }/>
       )
     })
   }
