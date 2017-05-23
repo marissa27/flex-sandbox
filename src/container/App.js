@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from '../components/header';
-import { FlexParent } from '../components/flexParent';
+import FlexParent from '../components/flexParent';
 import { Controls } from '../components/controls';
 import { Footer } from '../components/footer';
 
