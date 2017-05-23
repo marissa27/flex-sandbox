@@ -23,7 +23,9 @@ export const SubControl = ({ properties, title, handleChange }) => {
   return (
     <article className="control-list">
       <h3>{ title }</h3>
+      <div className="prop-wrap">
       { renderRadioBtn() }
+      </div>
     </article>
   )
 }
