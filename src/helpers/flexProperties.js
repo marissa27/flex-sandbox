@@ -3,7 +3,7 @@
     props: ['row', 'row-reverse', 'column', 'column-reverse']
   },
   { title: 'flex-wrap',
-    props: ['no-wrap', 'wrap', 'wrap-reverse']
+    props: ['nowrap', 'wrap', 'wrap-reverse']
   },
   { title: 'justify-content',
     props: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around']
