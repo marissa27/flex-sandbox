@@ -21,3 +21,19 @@ h1 {
   display: block;
   margin: 0 5px 0 0;
 }
+
+/* Flex Parent Section */
+.flex-parent {
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/* Flex Child */
+.flex-child {
+  width: 125px;
+  height: 300px;
+  color: #fff;
+  background-color: #000;
+}
