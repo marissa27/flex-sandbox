@@ -7,8 +7,8 @@ export const SubControl = ({ properties, title, handleChange }) => {
       const isCheck = i === 0 ? true : false;
       return (
         <p className="flex-prop" key={i}>
-          <input type="radio" id={ prop } value={ prop } name={ title } defaultChecked={ isCheck }/>
-          <label htmlFor={ prop }>{ prop }</label>
+          <input type="radio" id={ prop + title } value={ prop } name={ title } defaultChecked={ isCheck } onChange={() => handleChange(title, prop)}/>
+          <label htmlFor={ prop + title }>{ prop }</label>
         </p>
       )
     });
