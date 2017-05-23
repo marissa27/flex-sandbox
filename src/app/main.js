@@ -4,12 +4,12 @@ let mainWindow = null;
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    minWidth: 400,
-    minHeight: 300
+    minWidth: 800,
+    minHeight: 700
   });
 
   console.log('The application is ready');
-  
+
   mainWindow.loadURL('http://localhost:3000');
 
   mainWindow.webContents.openDevTools();

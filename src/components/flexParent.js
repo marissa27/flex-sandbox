@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlexChild } from './flexChild';
+import FlexChild from './flexChild';
 
 export const FlexParent = ({ style, divs }) => {
 
