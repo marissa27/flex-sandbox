@@ -25,7 +25,7 @@ h1 {
 /* Flex Parent Section */
 .flex-parent {
   width: 95%;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 10px;
   border: 1px solid black;
 }
@@ -37,4 +37,28 @@ h1 {
   color: #fff;
   background-color: #000;
   margin: 2px;
+}
+
+/* Flex Controls Section */
+.flex-controls {
+  display: flex;
+  justify-content: space-around;;
+  width: 95%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+}
+
+.sandbox {
+  height: 80px;
+  width: 80px;
+}
+
+.git-link {
+  display: block;
 }

@@ -12,7 +12,7 @@ export const Controls = () => {
   }
 
   return (
-    <section>
+    <section className="flex-controls">
       { renderFlexProps() }
     </section>
   )
