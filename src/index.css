@@ -48,3 +48,17 @@ h1 {
   padding: 10px;
   border: 1px solid black;
 }
+
+/* Footer Section */
+footer {
+  text-align: center;
+}
+
+.sandbox {
+  height: 80px;
+  width: 80px;
+}
+
+.git-link {
+  display: block;
+}
