@@ -33,14 +33,35 @@ h1 {
 /* Flex Child */
 .flex-child {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 125px;
-  height: 300px;
   color: #fff;
   background-color: #000;
-  margin: 2px;
+  margin: 5px;
 }
+
+.input-wrapper {
+  width: 80%;
+}
+
+.child-input {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  width: 30%;
+  font-size: .9em;
+  padding: 3px;
+}
+
+.input-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6em;
+}
+
+
 
 /* Flex Controls Section */
 .flex-controls {

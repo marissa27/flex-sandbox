@@ -35,6 +35,7 @@ class App extends Component {
   }
 
   handleChange(title, prop) {
+
     const formattedTitle = this.formatTitle(title);
     const newStyle = Object.assign({}, this.state.style, { [formattedTitle]: prop })
     this.setState({
