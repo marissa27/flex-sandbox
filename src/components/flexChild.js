@@ -15,14 +15,15 @@ export default class FlexChild extends Component {
   handleChildProps(e) {
     const { value, name, min } = e.target
     const checkMin = value < min ? min : value;
-    console.log(checkMin)
     this.setState({
       [name]: checkMin
     })
   }
 
   handleKeyDown(e) {
-    e.preventDefault();
+    if(e.keyCode !== 38 && e.keyCode !== 40) {
+      e.preventDefault();
+    }
   }
 
   render() {
