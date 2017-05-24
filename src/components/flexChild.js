@@ -31,7 +31,12 @@ export default class FlexChild extends Component {
     const { handleDelete, divNumber } = this.props;
     return (
       <div style={ this.state } className="flex-child">
-        <Button handleClick={ handleDelete } name="X" divNumber={ divNumber }/>
+        <Button
+          className="delete-btn"
+          handleClick={ handleDelete }
+          name="X"
+          divNumber={ divNumber }
+        />
         <h2>{ this.props.divNumber }</h2>
         <div className="input-wrapper">
           <p className="input-label">
