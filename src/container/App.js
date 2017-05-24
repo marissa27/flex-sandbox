@@ -84,7 +84,13 @@ class App extends Component {
             handleChange={ this.handleChange.bind(this) }
           />
         </section>
-        { showCode && <ShowCode handleShowCode={ this.toggleCode.bind(this) } divs={ childDivs }/> }
+          { showCode &&
+            <ShowCode
+              handleShowCode={ this.toggleCode.bind(this) }
+              divs={ childDivs }
+              style={ style }
+            />
+          }
         <Footer />
       </div>
     );

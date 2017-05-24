@@ -17,7 +17,8 @@
   margin: 10px;
 }
 
-.html-div {
+.html-div,
+.css-div {
   width: 48%;
   height: 80%;
   max-width: 340px;
@@ -26,6 +27,12 @@
   border: 1px solid white;
   border-radius: 10px;
   font-size: 1.2em;
+}
+
+.code-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 code {
