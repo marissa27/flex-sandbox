@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Header } from '../components/header';
 import { FlexParent } from '../components/flexParent';
 import { Controls } from '../components/controls';
+import { ShowCode } from '../components/showCode';
 import { Footer } from '../components/footer';
 
 import '../styles/App.css';
@@ -16,7 +17,8 @@ const initialState = {
     alignContent: "",
   },
   childDivs: [1, 2, 3, 4],
-  error: ""
+  error: "",
+  showCode: false,
 }
 
 class App extends Component {
@@ -57,16 +59,32 @@ class App extends Component {
     this.setState({ childDivs: filtered });
   }
 
+  toggleCode() {
+    const toggle = !this.state.showCode
+    this.setState({ showCode: toggle })
+  }
+
   render() {
-    const { style, childDivs, error } = this.state;
+    const { style, childDivs, error, showCode } = this.state;
     return (
       <div className="App">
-        <Header handleDiv={ this.addChildDiv.bind(this) } handleReset={ this.handleReset.bind(this) }/>
-        { error && <p className="error">error: { error }</p> }
+        <Header
+          handleDiv={ this.addChildDiv.bind(this) }
+          handleReset={ this.handleReset.bind(this) }
+          handleShowCode={ this.toggleCode.bind(this) }
+        />
+        { error && <p>{ error }</p> }
         <section className="main-wrapper">
-          <FlexParent style={ style } divs={ childDivs } handleDelete={ this.handleDelete.bind(this) }/>
-          <Controls handleChange={ this.handleChange.bind(this) }/>
+          <FlexParent
+            style={ style }
+            divs={ childDivs }
+            handleDelete={ this.handleDelete.bind(this) }
+          />
+          <Controls
+            handleChange={ this.handleChange.bind(this) }
+          />
         </section>
+        { showCode && <ShowCode handleShowCode={ this.toggleCode.bind(this) } divs={ childDivs }/> }
         <Footer />
       </div>
     );
