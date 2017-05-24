@@ -4,7 +4,7 @@ import { FlexParent } from '../components/flexParent';
 import { Controls } from '../components/controls';
 import { Footer } from '../components/footer';
 
-import './App.css';
+import '../styles/App.css';
 
 const initialState = {
   style: {
