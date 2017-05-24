@@ -1,0 +1,14 @@
+.show-code--section {
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+  max-width: 800px;
+  max-height: 580px;
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.9);
+}
+
