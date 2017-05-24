@@ -28,11 +28,11 @@ class App extends Component {
   addChildDiv() {
     const { childDivs } = this.state;
     if (childDivs.length > 9) {
-      this.setState({ error: "Maximum child items is set to 10."})
+      this.setState({ error: "Maximum child items is set to 10." });
     } else {
-      const num = Math.max(...childDivs);
+      const num = !childDivs.length ? 0 : Math.max(...childDivs);
       const newDivs = childDivs.concat(num + 1);
-      this.setState({ childDivs: newDivs })
+      this.setState({ childDivs: newDivs });
     }
   }
 
@@ -43,16 +43,18 @@ class App extends Component {
   }
 
   handleChange(title, prop) {
-
     const formattedTitle = this.formatTitle(title);
-    const newStyle = Object.assign({}, this.state.style, { [formattedTitle]: prop })
-    this.setState({
-      style: newStyle
-    })
+    const newStyle = Object.assign({}, this.state.style, { [formattedTitle]: prop });
+    this.setState({ style: newStyle });
   }
 
   handleReset() {
-    this.setState(initialState)
+    this.setState(initialState);
+  }
+
+  handleDelete(divNumber) {
+    const filtered = this.state.childDivs.filter(div => div !== divNumber);
+    this.setState({ childDivs: filtered });
   }
 
   render() {
@@ -62,7 +64,7 @@ class App extends Component {
         <Header handleDiv={ this.addChildDiv.bind(this) } handleReset={ this.handleReset.bind(this) }/>
         { error && <p>{ error }</p> }
         <section className="main-wrapper">
-          <FlexParent style={ style } divs={ childDivs }/>
+          <FlexParent style={ style } divs={ childDivs } handleDelete={ this.handleDelete.bind(this) }/>
           <Controls handleChange={ this.handleChange.bind(this) }/>
         </section>
         <Footer />

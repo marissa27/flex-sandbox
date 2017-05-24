@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from './button';
 
 export default class FlexChild extends Component {
   constructor() {
@@ -26,8 +27,10 @@ export default class FlexChild extends Component {
 
   render() {
     const { height, width, order, flexGrow } = this.state;
+    const { handleDelete, divNumber } = this.props;
     return (
       <div style={ this.state } className="flex-child">
+        <Button handleClick={ handleDelete } name="X" divNumber={ divNumber }/>
         <h2>{ this.props.divNumber }</h2>
         <div className="input-wrapper">
           <p className="input-label">
