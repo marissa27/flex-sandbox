@@ -1,0 +1,56 @@
+.flex-child {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2E5266;
+  border-radius: 2px;
+  color: #fff;
+  margin: 2.5px;
+  min-height: 200px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  border-style: none;
+  color: grey;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #820707;
+  font-weight: bold;
+}
+
+.input-wrapper {
+  width: 80%;
+}
+
+.child-input {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 2px;
+  color: white;
+  font-size: .9em;
+  padding: 3px;
+  width: 50%;
+}
+
+.input-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6em;
+}
+
+ /*CSS to hide input spinner*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
