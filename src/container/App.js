@@ -5,7 +5,7 @@ import { Controls } from '../components/controls';
 import { ShowCode } from '../components/showCode';
 import { Footer } from '../components/footer';
 
-import './App.css';
+import '../styles/App.css';
 
 const initialState = {
   style: {
@@ -30,7 +30,7 @@ class App extends Component {
   addChildDiv() {
     const { childDivs } = this.state;
     if (childDivs.length > 9) {
-      this.setState({ error: "Maximum child items is set to 10." });
+      this.setState({ error: "maximum child items is set to 10" });
     } else {
       const num = !childDivs.length ? 0 : Math.max(...childDivs);
       const newDivs = childDivs.concat(num + 1);

@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #2E5266;
+  border-bottom: 4px solid #F9A03F;
+  color: #DBE9EE;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  margin: 0 auto 0 0;
+  font-family: 'Finger Paint', sans-serif;
+  text-shadow: -1px -1px 0px #C0D6DF;
+}
+
+.header-icon {
+  display: block;
+  margin: 0 10px 0 0;
+  height: 50px;
+  width: 50px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid #DBE9EE;
+  border-radius: 20px;
+  color: #DBE9EE;
+  padding: 8px 10px;
+  margin: 0 8px;
+  cursor: pointer;
+  font-size: .75em;
+  width: 90px;
+  transition: all .25s;
+}
+
+.btn:hover {
+  background-color: #F9A03F;
+  border: 1px solid #F9A03F;
+  color: #fff;
+}

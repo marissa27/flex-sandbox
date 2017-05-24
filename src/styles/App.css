@@ -1,0 +1,32 @@
+@import './Header.css';
+@import './FlexParent.css';
+@import './FlexItems.css';
+@import './FlexControls.css';
+@import './Footer.css';
+@import url('https://fonts.googleapis.com/css?family=Finger+Paint');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: rgba(247, 212, 137, .7);
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.error {
+  margin: 15px auto;
+  padding: 10px;
+  width: 95%;
+  background-color: #d03d3d;
+  background-color: rgba(219, 47, 47, .9);
+  border-radius: 8px;
+  color: #f8f8f8;
+}
