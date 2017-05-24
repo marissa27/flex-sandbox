@@ -14,7 +14,7 @@ export default class FlexChild extends Component {
 
   handleChildProps(e) {
     const { value, name, min } = e.target
-    const checkMin = value < min ? min : value;
+    const checkMin = value < min ? parseInt(min) : parseInt(value);
     this.setState({
       [name]: checkMin
     })
