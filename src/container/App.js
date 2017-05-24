@@ -6,26 +6,34 @@ import { Footer } from '../components/footer';
 
 import './App.css';
 
+const initialState = {
+  style: {
+    display: "flex",
+    flexDirection: "",
+    flexWrap: "",
+    justifyContent: "",
+    alignItems: "",
+    alignContent: "",
+  },
+  childDivs: [1, 2, 3, 4],
+  error: ""
+}
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      style: {
-        display: "flex",
-        flexDirection: "",
-        flexWrap: "",
-        justifyContent: "",
-        alignItems: "",
-        alignContent: "",
-      },
-      childDivs: [1, 2, 3, 4],
-    }
+    this.state = initialState;
   };
 
   addChildDiv() {
-    const num = Math.max(...this.state.childDivs);
-    const newDivs = this.state.childDivs.concat(num + 1);
-    this.setState({ childDivs: newDivs })
+    const { childDivs } = this.state;
+    if (childDivs.length > 9) {
+      this.setState({ error: "Maximum child items is set to 10."})
+    } else {
+      const num = Math.max(...childDivs);
+      const newDivs = childDivs.concat(num + 1);
+      this.setState({ childDivs: newDivs })
+    }
   }
 
   formatTitle(title) {
@@ -43,13 +51,20 @@ class App extends Component {
     })
   }
 
+  handleReset() {
+    this.setState(initialState)
+  }
+
   render() {
-    const { style, childDivs } = this.state;
+    const { style, childDivs, error } = this.state;
     return (
       <div className="App">
-        <Header handleDiv={ this.addChildDiv.bind(this) }/>
-        <FlexParent style={ style } divs={ childDivs }/>
-        <Controls handleChange={ this.handleChange.bind(this) }/>
+        <Header handleDiv={ this.addChildDiv.bind(this) } handleReset={ this.handleReset.bind(this) }/>
+        { error && <p>{ error }</p> }
+        <section className="main-wrapper">
+          <FlexParent style={ style } divs={ childDivs }/>
+          <Controls handleChange={ this.handleChange.bind(this) }/>
+        </section>
         <Footer />
       </div>
     );

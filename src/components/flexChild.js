@@ -4,7 +4,7 @@ export default class FlexChild extends Component {
   constructor() {
     super();
     this.state = {
-      height: 300,
+      height: 200,
       width: 125,
       order: 0,
       flexGrow: 0,
@@ -31,21 +31,54 @@ export default class FlexChild extends Component {
         <h2>{ this.props.divNumber }</h2>
         <div className="input-wrapper">
           <p className="input-label">
-            <span>Height</span>
-            <input className="child-input" type="number" value={ height } name="height" min="125" max="300" step="5" onKeyDown={ (e) => this.handleKeyDown(e) } onChange={ (e) => this.handleChildProps(e) } />
-            </p>
-        <p className="input-label">
-          <span>Width</span>
-          <input className="child-input" type="number" value={ width } name="width" min="125" step="5" onKeyDown={ ((e) => this.handleKeyDown(e)) } onChange={ (e) => this.handleChildProps(e) }/>
+            <span>H</span>
+            <input
+              className="child-input"
+              type="number"
+              value={ height }
+              name="height"
+              min="200"
+              max="300"
+              step="5"
+              onKeyDown={ (e) => this.handleKeyDown(e) }
+              onChange={ (e) => this.handleChildProps(e) }
+            />
           </p>
-      <p className="input-label">
-        <span>Order</span>
-        <input className="child-input" type="number" value={ order } name="order" min="0" onChange={ (e) => this.handleChildProps(e) }/>
-        </p>
-    <p className="input-label">
-      <span>Flex-Grow</span>
-      <input className="child-input" type="number" value={ flexGrow } name="flexGrow" min="0" onChange={ (e) => this.handleChildProps(e) }/>
-      </p>
+          <p className="input-label">
+            <span>W</span>
+            <input
+              className="child-input"
+              type="number"
+              value={ width }
+              name="width"
+              min="125"
+              step="5"
+              onKeyDown={ ((e) => this.handleKeyDown(e)) }
+              onChange={ (e) => this.handleChildProps(e) }
+            />
+          </p>
+          <p className="input-label">
+            <span>O</span>
+            <input
+              className="child-input"
+              type="number"
+              value={ order }
+              name="order"
+              min="0"
+              onChange={ (e) => this.handleChildProps(e) }
+            />
+          </p>
+          <p className="input-label">
+            <span>FG</span>
+            <input
+              className="child-input"
+              type="number"
+              value={ flexGrow }
+              name="flexGrow"
+              min="0"
+              onChange={ (e) => this.handleChildProps(e) }
+            />
+          </p>
         </div>
       </div>
     )

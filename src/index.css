@@ -22,11 +22,21 @@ h1 {
   margin: 0 5px 0 0;
 }
 
+.main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  margin: 0 auto;
+}
+
 /* Flex Parent Section */
 .flex-parent {
-  width: 95%;
-  margin: 10px auto;
-  padding: 10px;
+  width: 70%;
+  height: 500px;
+  overflow: scroll;
+  margin: 0 10px 0 0;
+  padding: 5px;
   border: 1px solid black;
 }
 
@@ -38,7 +48,7 @@ h1 {
   align-items: center;
   color: #fff;
   background-color: #000;
-  margin: 5px;
+  margin: 2.5px;
 }
 
 .input-wrapper {
@@ -49,7 +59,7 @@ h1 {
   border: 1px solid white;
   background-color: transparent;
   color: white;
-  width: 30%;
+  width: 50%;
   font-size: .9em;
   padding: 3px;
 }
@@ -61,16 +71,35 @@ h1 {
   font-size: 0.6em;
 }
 
-
-
 /* Flex Controls Section */
 .flex-controls {
   display: flex;
-  justify-content: space-around;;
-  width: 95%;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30%;
+  height: 500px;
+  overflow: auto;
   margin: 20px auto;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid black;
+  font-size: 0.8em;
+}
+
+.control-list {
+  margin: 5px 0;
+}
+
+.control-list h3 {
+  margin: 3px;
+}
+
+.prop-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-prop {
+  margin: 5px;
 }
 
 /* Footer Section */
