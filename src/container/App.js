@@ -3,6 +3,7 @@ import { Header } from '../components/header';
 import { FlexParent } from '../components/flexParent';
 import { Controls } from '../components/controls';
 import { ShowCode } from '../components/showCode';
+import { Legend } from '../components/legend';
 import { Footer } from '../components/footer';
 
 import '../styles/App.css';
@@ -19,6 +20,7 @@ const initialState = {
   childDivs: [],
   error: "",
   showCode: false,
+  legend: false
 }
 
 const initialChildStyle = { height: 200, width: 125, order: 0, flexGrow: 0 };
@@ -81,12 +83,17 @@ class App extends Component {
       }
       return div;
     })
-    this.setState({ childDivs: modified })
+    this.setState({ childDivs: modified });
   }
 
   toggleCode() {
-    const toggle = !this.state.showCode
-    this.setState({ showCode: toggle })
+    const toggle = !this.state.showCode;
+    this.setState({ showCode: toggle });
+  }
+
+  showLegend() {
+    const toggle = !this.state.legend;
+    this.setState({ legend: toggle });
   }
 
   handleError() {
@@ -95,14 +102,16 @@ class App extends Component {
   }
 
   render() {
-    const { style, childDivs, error, showCode } = this.state;
+    const { style, childDivs, error, showCode, legend } = this.state;
     return (
       <div className="App">
         <Header
           handleDiv={ this.addChildDiv.bind(this) }
           handleReset={ this.handleReset.bind(this) }
           handleShowCode={ this.toggleCode.bind(this) }
+          handleShowLegend={ this.showLegend.bind(this) }
         />
+        { legend && <Legend /> }
         { error && <p className="error">{ error }</p> }
         <section className="main-wrapper">
           <FlexParent
