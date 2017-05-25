@@ -11,6 +11,7 @@
   margin: 0 auto;
   color: #FFF;
   background: rgba(0,0,0,0.9);
+  overflow: scroll;
 }
 
 .show-code-header {
@@ -41,4 +42,3 @@
 pre, code {
   white-space: pre-line;
 }
-
