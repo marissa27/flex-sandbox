@@ -16,10 +16,12 @@ const initialState = {
     alignItems: "",
     alignContent: "",
   },
-  childDivs: [1, 2, 3, 4],
+  childDivs: [],
   error: "",
   showCode: false,
 }
+
+const initialChildStyle = { height: 200, width: 125, order: 0, flexGrow: 0 };
 
 class App extends Component {
   constructor() {
@@ -27,13 +29,24 @@ class App extends Component {
     this.state = initialState;
   };
 
+  componentWillMount() {
+    this.renderInitialDivs()
+  }
+
+  renderInitialDivs() {
+    const loadedChildDivs = [1, 2, 3, 4].map(num => {
+      return { id: num, ...initialChildStyle };
+    })
+    this.setState({ childDivs: loadedChildDivs });
+  }
+
   addChildDiv() {
     const { childDivs } = this.state;
     if (childDivs.length > 9) {
       this.setState({ error: "maximum child items is set to 10" });
     } else {
-      const num = !childDivs.length ? 0 : Math.max(...childDivs);
-      const newDivs = childDivs.concat(num + 1);
+      const num = !childDivs.length ? 0 : childDivs[childDivs.length -1].id;
+      const newDivs = childDivs.concat([{ id: num + 1, ...initialChildStyle }]);
       this.setState({ childDivs: newDivs });
     }
   }
@@ -52,11 +65,23 @@ class App extends Component {
 
   handleReset() {
     this.setState(initialState);
+    this.renderInitialDivs();
   }
 
   handleDelete(divNumber) {
-    const filtered = this.state.childDivs.filter(div => div !== divNumber);
+    const filtered = this.state.childDivs.filter(div => div.id !== divNumber);
     this.setState({ childDivs: filtered });
+  }
+
+  handleChildProps(e, id) {
+    const { value, name } = e.target
+    const modified = this.state.childDivs.map(div => {
+      if(div.id === id) {
+        return Object.assign({}, div, { [name]: parseInt(value, 10) })
+      }
+      return div;
+    })
+    this.setState({ childDivs: modified })
   }
 
   toggleCode() {
@@ -79,6 +104,7 @@ class App extends Component {
             style={ style }
             divs={ childDivs }
             handleDelete={ this.handleDelete.bind(this) }
+            handleChildProps={ this.handleChildProps.bind(this) }
           />
           <Controls
             handleChange={ this.handleChange.bind(this) }
