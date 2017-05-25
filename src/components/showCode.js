@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button } from './button';
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/styles';
+
 import './showCode.css';
 
 export const ShowCode = ({ handleShowCode, divs, style }) => {
@@ -21,25 +24,25 @@ export const ShowCode = ({ handleShowCode, divs, style }) => {
 
   const htmlRender = () => {
     return (
-      <code>
+      <SyntaxHighlighter language='html' style={dracula} >
         {`
           <section class="flexbox-container">
             ${ toHTML() }
           </section>
         `}
-      </code>
+      </SyntaxHighlighter>
     )
   }
 
   const cssRender = () => {
     return (
-      <code>
+      <SyntaxHighlighter language='css' style={dracula}>
         {`
           .flexbox-container {
             ${ toCSS() }
           }
         `}
-      </code>
+      </SyntaxHighlighter>
     )
   }
 
