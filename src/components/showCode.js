@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './button';
 
-import '../styles/showCode.css';
+import './showCode.css';
 
 export const ShowCode = ({ handleShowCode, divs, style }) => {
 
