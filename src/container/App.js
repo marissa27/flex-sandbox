@@ -43,7 +43,7 @@ class App extends Component {
   addChildDiv() {
     const { childDivs } = this.state;
     if (childDivs.length > 9) {
-      this.setState({ error: "maximum child items is set to 10" });
+      this.handleError();
     } else {
       const num = !childDivs.length ? 0 : childDivs[childDivs.length -1].id;
       const newDivs = childDivs.concat([{ id: num + 1, ...initialChildStyle }]);
@@ -89,6 +89,11 @@ class App extends Component {
     this.setState({ showCode: toggle })
   }
 
+  handleError() {
+    this.setState({ error: "Maximum child items is set to 10" });
+    setTimeout(() => { this.setState({ error: "" }) }, 3000);
+  }
+
   render() {
     const { style, childDivs, error, showCode } = this.state;
     return (
@@ -98,7 +103,7 @@ class App extends Component {
           handleReset={ this.handleReset.bind(this) }
           handleShowCode={ this.toggleCode.bind(this) }
         />
-        { error && <p>{ error }</p> }
+        { error && <p className="error">{ error }</p> }
         <section className="main-wrapper">
           <FlexParent
             style={ style }
