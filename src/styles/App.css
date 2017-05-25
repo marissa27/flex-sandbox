@@ -22,11 +22,10 @@ body {
 }
 
 .error {
+  position: relative;
+  top: -15px;
   margin: 15px auto;
   padding: 10px;
-  width: 95%;
-  background-color: #d03d3d;
-  background-color: rgba(219, 47, 47, .9);
-  border-radius: 8px;
-  color: #f8f8f8;
+  background-color: #b86060;
+  color: #fefefe;
 }

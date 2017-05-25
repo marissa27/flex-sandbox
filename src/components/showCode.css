@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   width: 90%;
-  height: 90%;
+  height: 85%;
   max-width: 800px;
   max-height: 580px;
   margin: 0 auto;
@@ -29,6 +29,7 @@
 .code-wrapper {
   display: flex;
   flex-direction: column;
+
   width: 100%;
 }
 
@@ -38,5 +39,6 @@
 }
 
 pre, code {
-    white-space: pre-line;
+  white-space: pre-line;
 }
+

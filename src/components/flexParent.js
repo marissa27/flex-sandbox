@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
-import FlexChild from './flexChild';
+import React from 'react';
+import { FlexChild } from './flexChild';
 
-export const FlexParent = ({ style, divs, handleDelete }) => {
+export const FlexParent = ({ style, divs, handleDelete, handleChildProps }) => {
 
   const renderChildrenDiv = () => {
-    return divs.map((num, i) => {
+    return divs.map((div, i) => {
       return (
-        <FlexChild key={i} divNumber={ num } handleDelete={ handleDelete }/>
+        <FlexChild
+          key={i}
+          childProps={ div }
+          handleDelete={ handleDelete }
+          handleChildProps={ handleChildProps }
+        />
       )
     })
   }

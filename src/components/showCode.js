@@ -11,7 +11,7 @@ export const ShowCode = ({ handleShowCode, divs, style }) => {
   const toHTML = () => {
     return divs.map(div => {
       return `
-        <div id="flexbox-child-${div}"></div>
+        <div id="flexbox-child-${div.id}"></div>
       `
     }).join('')
   }
