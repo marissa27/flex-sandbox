@@ -18,23 +18,30 @@ export const ShowCode = ({ handleShowCode, divs, style }) => {
 
   const toCSS = () => {
     return Object.keys(style).map(sty => {
-      return style[sty] !== "" ? `.flexbox-container { ${sty}: ${style[sty]}; }` : null;
+      return style[sty] !== "" ? `${sty}: ${style[sty]};` : null;
     }).join('')
   }
 
   const htmlRender = () => {
     return (
       <SyntaxHighlighter language='html' style={dracula} >
-        { toHTML() }
+        {`
+          <section class="flexbox-container">
+            ${ toHTML() }
+          </section>
+        `}
       </SyntaxHighlighter>
-
     )
   }
 
   const cssRender = () => {
     return (
-      <SyntaxHighlighter language='css'>
-          { toCSS() }
+      <SyntaxHighlighter language='css' style={dracula}>
+        {`
+          .flexbox-container {
+            ${ toCSS() }
+          }
+        `}
       </SyntaxHighlighter>
     )
   }
