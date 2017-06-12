@@ -2,7 +2,7 @@
   "name": "flexbox-sandbox",
   "version": "0.1.0",
   "private": true,
-  "main": "src/app/main.js",
+  "main": "src/index.js",
   "homepage": "https://dunncl15.github.io/flex-sandbox",
   "devDependencies": {
     "gh-pages": "^1.0.0",
