@@ -1,28 +1,38 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .75);
+}
+
 .show-code--section {
   display: block;
   position: absolute;
   top: 50px;
-  left: 0;
-  right: 0;
-  width: 90%;
-  height: 85%;
-  max-width: 800px;
-  max-height: 580px;
+  left: 50px;
+  right: 50px;
+  bottom: 50px;
+  border-radius: 2px;
   margin: 0 auto;
   color: #FFF;
-  background: rgba(0,0,0,0.9);
-  overflow: scroll;
+  background: #f8f8f8;
+  overflow: auto;
 }
 
 .show-code-header {
-  margin: 10px;
+  position: relative;
+  margin: 15px 10px;
+  color: rgb(40, 42, 54);
+  text-shadow: none;
+  padding: 0 0 0 20px;
 }
 
 .html-div,
 .css-div {
   margin: 10px 25px;
-  padding: 10px;
-  border: 1px solid white;
   border-radius: 10px;
   font-size: 1.2em;
 }
@@ -30,15 +40,25 @@
 .code-wrapper {
   display: flex;
   flex-direction: column;
-
   width: 100%;
 }
 
 .toggle--btn {
-  float: right;
-  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: firebrick;
+  border-style: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
 }
 
 pre, code {
   white-space: pre-line;
+  border-radius: 3px;
+  overflow: auto;
 }

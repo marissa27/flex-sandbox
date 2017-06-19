@@ -47,17 +47,19 @@ export const ShowCode = ({ handleShowCode, divs, style }) => {
   }
 
   return (
-    <section className="show-code--section">
-      <Button name="X" className="btn toggle--btn" handleClick={ handleShowCode }/>
-      <h1 className="show-code-header">Source Code</h1>
-      <div className="code-wrapper">
-        <div className="html-div">
-          { htmlRender() }
+    <section className="modal-wrapper">
+      <section className="show-code--section">
+        <Button name="X" className="toggle--btn" handleClick={ handleShowCode }/>
+        <h1 className="show-code-header">Source Code</h1>
+        <div className="code-wrapper">
+          <div className="html-div">
+            { htmlRender() }
+          </div>
+          <div className="css-div">
+            { cssRender() }
+          </div>
         </div>
-        <div className="css-div">
-          { cssRender() }
-        </div>
-      </div>
+      </section>
     </section>
   )
 }
