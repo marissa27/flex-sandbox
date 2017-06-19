@@ -10,9 +10,10 @@ export const SubControl = ({ properties, title, handleChange }) => {
           <input
             id={ prop + title }
             type="radio"
-            value={ prop } name={ title }
+            value={ prop }
+            name={ title }
             defaultChecked={ isCheck }
-            onChange={() => handleChange(title, prop)}
+            onClick={() => handleChange(title, prop)}
           />
           <label htmlFor={ prop + title }>{ prop }</label>
         </p>
@@ -24,7 +25,7 @@ export const SubControl = ({ properties, title, handleChange }) => {
     <article className="control-list">
       <h3>{ title }</h3>
       <div className="prop-wrap">
-      { renderRadioBtn() }
+        { renderRadioBtn() }
       </div>
     </article>
   )
