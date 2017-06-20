@@ -1,5 +1,5 @@
 footer {
-  margin: 40px 0 0 0;
+  margin: 20px 0 0 0;
   padding: 0 0 15px 0;
   background-color: #2E5266;
   border-top: 4px solid #F9A03F;
@@ -7,8 +7,8 @@ footer {
 }
 
 .sandbox {
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
 }
 
 .github-icon {
