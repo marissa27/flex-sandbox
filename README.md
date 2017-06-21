@@ -1,6 +1,6 @@
 # Flexbox Sandbox
 
-Flexbox Sandbox is a desktop app built with Electron. It allows the user to mess around with the flex css settings to see where / how objects fall.
+Flexbox Sandbox is a desktop app built with React. It allows the user to play around with various flex css settings to see where / how objects fall.
 
 ## Getting Started
 
@@ -13,24 +13,20 @@ $ git clone
 $ npm install
 
 ### Run Server:
-$ node server.js
+$ npm start
 
 #### This will run on:
 http://localhost:3000
 
 ### Prerequisites
 
-Client-side: JavaScript, React, Electron
+Client-side: JavaScript, React
 
-Testing: Spectron, Jest
-
-## Running the tests
+Testing: Jest
 
 ## Deployment
 
-## Summary
-
-## Links to Blogposts
+[Flexbox-Sandbox](https://mickyfen17.github.io/flex-sandbox/)
 
 ## Authors
 * **Marissa Reinke** - *Initial work* - [Marissa27](https://github.com/marissa27)

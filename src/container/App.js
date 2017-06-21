@@ -88,7 +88,10 @@ class App extends Component {
 
   toggleCode() {
     const toggle = !this.state.showCode;
+    const overflow = this.state.showCode === true ? '' : 'hidden';
+
     this.setState({ showCode: toggle });
+    document.body.style.overflow = overflow;
   }
 
   showLegend() {

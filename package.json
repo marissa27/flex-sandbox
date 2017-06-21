@@ -1,9 +1,11 @@
 {
   "name": "flexbox-sandbox",
+  "homepage": "https://mickyfen17.github.io/flex-sandbox/",
   "version": "0.1.0",
   "private": true,
   "main": "src/app/main.js",
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "react-scripts": "1.0.5"
   },
   "dependencies": {
@@ -14,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy" : "npm run build&&gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
